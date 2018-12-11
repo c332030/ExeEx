@@ -23,8 +23,7 @@ int WINAPI WinMain(
 	int nShowCmd
 ) {
 	ExeEx exeEx;
-	exeEx.execute();
-
+	exeEx.execute(lpCmdLine);
 
 	return 0;
 }

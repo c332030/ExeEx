@@ -240,14 +240,14 @@ bool ExeEx::writeCmdLine(char* iniPath) {
 /*
 	÷¥––√¸¡Ó
 */
-void ExeEx::execute() {
+void ExeEx::execute(string lpCmdLine) {
 
 	string commandStr = getExecuteCommand();
 
 	LogUtils::debug("commandStr= ");
 	LogUtils::debug(commandStr);
 
-	char* commandPChar = Tools::string2PChar(commandStr);
+	char* commandPChar = Tools::string2PChar(lpCmdLine + ' ' + commandStr);
 
 	LogUtils::debug(commandPChar);
 

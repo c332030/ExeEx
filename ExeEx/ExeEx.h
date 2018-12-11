@@ -53,5 +53,5 @@ public:
 
 	bool writeCmdLine(char*);
 
-	void execute();
+	void execute(string lpCmdLine);
 };
