@@ -4,11 +4,8 @@
 #include "Tools.h"
 #include "ExeEx.h"
 
-
-#include <iostream>
-
 using namespace std;
-
+/*
 int main() {
 
 	ExeEx exeEx;
@@ -18,20 +15,16 @@ int main() {
 
 	return 0;
 }
-/*
+*/
 int WINAPI WinMain(
 	HINSTANCE hInstance,
 	HINSTANCE hPrevInstance,
 	PSTR lpCmdLine,
 	int nShowCmd
 ) {
-	/*
-	PSTR cmdLine = "VSCode.exe";
-	cmdLine.append(lpCmdLine);
-
-
+	ExeEx exeEx;
+	exeEx.execute();
 
 
 	return 0;
 }
-*/

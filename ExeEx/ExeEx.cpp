@@ -11,7 +11,7 @@ string ExeEx::getExePath() {
 	memset(path, 0, MAX_PATH);
 	GetModuleFileName(NULL, path, MAX_PATH);
 
-	cout << path << endl;
+	LogUtils::debug(path);
 
 	return path;
 }
@@ -124,7 +124,8 @@ string ExeEx::getExecuteCommand() {
 
 	char *iniFile = Tools::string2PChar(exeFilePath + INI);
 
-	cout << "iniFile= " <<  iniFile << endl;
+	LogUtils::debug("iniFile");
+	LogUtils::debug(iniFile);
 
 	/*
 		文件名
@@ -171,7 +172,7 @@ string ExeEx::getExecuteCommand() {
 		}
 	}
 
-	extendExe = exeFilePath + EXE_EXTEND + EXE_NAME;
+	extendExe = dirPath + '\\' + extendExe;
 
 	/*
 		参数
@@ -242,7 +243,21 @@ bool ExeEx::writeCmdLine(char* iniPath) {
 void ExeEx::execute() {
 
 	string commandStr = getExecuteCommand();
-	cout << "commandStr= " << commandStr << endl;
 
-//	WinExec("", 0);
+	LogUtils::debug("commandStr= ");
+	LogUtils::debug(commandStr);
+
+	char* commandPChar = Tools::string2PChar(commandStr);
+
+	LogUtils::debug(commandPChar);
+
+	UINT result = WinExec(commandPChar, 0);
+
+	LogUtils::debug("result= " + result);
+
+	if (result < 31) {
+		LogUtils::error("执行命令失败：" + commandStr);
+	}
+
+	delete[] commandPChar;
 }

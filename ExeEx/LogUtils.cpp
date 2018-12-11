@@ -5,23 +5,26 @@ LogUtils::LogUtils(){}
 
 LogUtils::~LogUtils(){}
 
+void console(string str) {
+	//	cout << endl << str << endl;
+}
 
 void LogUtils::trace(string str) {
-	cout << endl << str << endl;
+	console(str);
 }
 
 void LogUtils::debug(string str) {
-	cout << endl << str << endl;
+	console(str);
 }
 
 void LogUtils::info(string str) {
-	cout << endl << str << endl;
+	console(str);
 }
 
 void LogUtils::warn(string str) {
-	cout << endl << str << endl;
+	console(str);
 }
 
 void LogUtils::error(string str) {
-	cout << endl << str << endl;
+	console(str);
 }

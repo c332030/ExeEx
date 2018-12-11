@@ -6,8 +6,6 @@
 #include "Tools.h"
 #include "LogUtils.h"
 
-#include <iostream>
-
 using namespace std;
 
 class ExeEx
