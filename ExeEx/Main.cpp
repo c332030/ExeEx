@@ -6,16 +6,17 @@
 
 using namespace std;
 /*
-int main() {
+int main(int argc, char** args) {
 
 	ExeEx exeEx;
-	exeEx.execute();
+	exeEx.execute("");
 
 	getchar();
 
 	return 0;
 }
 */
+/**/
 int WINAPI WinMain(
 	HINSTANCE hInstance,
 	HINSTANCE hPrevInstance,
@@ -27,3 +28,4 @@ int WINAPI WinMain(
 
 	return 0;
 }
+

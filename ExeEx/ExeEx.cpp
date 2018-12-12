@@ -124,7 +124,6 @@ string ExeEx::getExecuteCommand() {
 
 	char *iniFile = Tools::string2PChar(exeFilePath + INI);
 
-	LogUtils::debug("iniFile");
 	LogUtils::debug(iniFile);
 
 	/*
@@ -196,7 +195,7 @@ string ExeEx::getExecuteCommand() {
 	delete[] iniFile;
 
 	string command = extendExe + ' ' + cmdLine;
-	LogUtils::debug("command= " + command);
+//	LogUtils::debug("command= " + command);
 
 	return command;
 }
@@ -244,10 +243,9 @@ void ExeEx::execute(string lpCmdLine) {
 
 	string commandStr = getExecuteCommand();
 
-	LogUtils::debug("commandStr= ");
 	LogUtils::debug(commandStr);
 
-	char* commandPChar = Tools::string2PChar(lpCmdLine + ' ' + commandStr);
+	char* commandPChar = Tools::string2PChar(commandStr + ' ' + lpCmdLine);
 
 	LogUtils::debug(commandPChar);
 
