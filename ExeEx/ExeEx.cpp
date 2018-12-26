@@ -148,6 +148,8 @@ string ExeEx::getExecuteCommand() {
 				LogUtils::debug("≥ı ºªØ≈‰÷√Œƒº˛ ß∞‹");
 			}
 		}
+
+		fclose(fh);
 	}
 
 	/*
@@ -243,19 +245,13 @@ void ExeEx::execute(string lpCmdLine) {
 
 	string commandStr = getExecuteCommand();
 
-	LogUtils::debug(commandStr);
+//	LogUtils::debug(commandStr);
 
 	char* commandPChar = Tools::string2PChar(commandStr + ' ' + lpCmdLine);
 
 	LogUtils::debug(commandPChar);
 
-	UINT result = WinExec(commandPChar, 0);
-
-	LogUtils::debug("result= " + result);
-
-	if (result < 31) {
-		LogUtils::error("÷¥––√¸¡Ó ß∞‹£∫" + commandStr);
-	}
+	WinExec(commandPChar, 0);
 
 	delete[] commandPChar;
 }

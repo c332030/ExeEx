@@ -35,11 +35,14 @@ char* Tools::string2PChar(string str) {
 		return NULL;
 	}
 
-	int len = str.length() + 1;
-	char *iniFile = new char[len];
+	int len = str.length();
+	char *arr = new char[len + 1];
 	
-	str.copy(iniFile, str.length(), 0);
-	iniFile[str.length()] = '\0';
+	for (int i = 0; i < len; i++) {
+		arr[i] = str[i];
+	}
 
-	return iniFile;
+	arr[len] = '\0';
+
+	return arr;
 }

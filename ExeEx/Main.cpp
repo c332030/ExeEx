@@ -5,17 +5,22 @@
 #include "ExeEx.h"
 
 using namespace std;
-/*
-int main(int argc, char** args) {
 
+int exec(PSTR lpCmdLine) {
 	ExeEx exeEx;
-	exeEx.execute("");
+	exeEx.execute(lpCmdLine);
 
 	getchar();
 
 	return 0;
 }
+
+/*
+int main(int argc, char** args) {
+	return exec("");
+}
 */
+
 /**/
 int WINAPI WinMain(
 	HINSTANCE hInstance,
@@ -23,9 +28,5 @@ int WINAPI WinMain(
 	PSTR lpCmdLine,
 	int nShowCmd
 ) {
-	ExeEx exeEx;
-	exeEx.execute(lpCmdLine);
-
-	return 0;
+	return exec(lpCmdLine);
 }
-
