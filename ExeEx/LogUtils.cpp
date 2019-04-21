@@ -6,7 +6,7 @@ LogUtils::LogUtils(){}
 LogUtils::~LogUtils(){}
 
 void console(string str) {
-	cout << str << endl;
+	//cout << str << endl;
 }
 
 void LogUtils::trace(string str) {
