@@ -47,7 +47,7 @@ public:
 
 	string getExeFilePath(string path);
 
-	string getExecuteCommand();
+	string getExecuteCommand(string lpCmdLine);
 
 	bool writeExeEx(char*, string exeName);
 

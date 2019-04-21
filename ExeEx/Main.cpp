@@ -18,7 +18,7 @@ int exec(string lpCmdLine) {
 
 	需要输出子进程控制台内容的情况
 	c++ 菜鸟，getchar() 保证子程序的输出在当前程序运行结束前
-*/
+
 int main(int argc, char** args) {
 
 	string str = "";
@@ -31,11 +31,12 @@ int main(int argc, char** args) {
 	getchar();
 	return 0;
 }
+*/
 
 
 /* 
 	适用于代理非控制台程序
-
+*/
 int WINAPI WinMain(
 	HINSTANCE hInstance,
 	HINSTANCE hPrevInstance,
@@ -44,4 +45,3 @@ int WINAPI WinMain(
 ) {
 	return exec(lpCmdLine);
 }
-*/

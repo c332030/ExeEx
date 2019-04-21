@@ -87,7 +87,7 @@ string ExeEx::getExeName(string path) {
 /*
 	获取执行命令
 */
-string ExeEx::getExecuteCommand() {
+string ExeEx::getExecuteCommand(string lpCmdLine) {
 
 	/*
 		当前 exe 路径
@@ -196,7 +196,8 @@ string ExeEx::getExecuteCommand() {
 	}
 	delete[] iniFile;
 
-	string command = extendExe + ' ' + cmdLine;
+	string command = extendExe + ' ' + cmdLine + ' ' + lpCmdLine;
+//	string command = extendExe + ' ' + lpCmdLine + ' ' + cmdLine;
 //	LogUtils::debug("command= " + command);
 
 	return command;
@@ -243,13 +244,16 @@ bool ExeEx::writeCmdLine(char* iniPath) {
 */
 void ExeEx::execute(string lpCmdLine) {
 
-	string commandStr = getExecuteCommand();
+	string commandStr = getExecuteCommand(lpCmdLine);
 
 //	LogUtils::debug(commandStr);
 
-	char* commandPChar = Tools::string2PChar(commandStr + ' ' + lpCmdLine);
+	// char* commandPChar = Tools::string2PChar(commandStr + ' ' + lpCmdLine);
+	char* commandPChar = Tools::string2PChar(commandStr);
 
 	LogUtils::debug(commandPChar);
+
+	cout << commandPChar << endl << endl;
 
 	WinExec(commandPChar, 0);
 
